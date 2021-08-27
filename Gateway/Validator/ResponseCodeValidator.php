@@ -3,11 +3,11 @@
  * Copyright © 2018 Cointopay. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Cointopay\PaymentGateway\Gateway\Validator;
+namespace CointopayCC\PaymentGateway\Gateway\Validator;
 
 use Magento\Payment\Gateway\Validator\AbstractValidator;
 use Magento\Payment\Gateway\Validator\ResultInterface;
-use Cointopay\PaymentGateway\Gateway\Http\Client\ClientMock;
+use CointopayCC\PaymentGateway\Gateway\Http\Client\ClientMock;
 
 class ResponseCodeValidator extends AbstractValidator
 {

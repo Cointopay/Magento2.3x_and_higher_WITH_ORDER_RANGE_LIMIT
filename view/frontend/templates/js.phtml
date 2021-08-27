@@ -3,9 +3,9 @@
         ['jquery'],
         function($) {
             $(function() {
-                $(document).on('change', '.cointopay_coin_val', function (event) {
+                $(document).on('change', '.cointopaycc_coin_val', function (event) {
                     event.preventDefault();
-                    selected_coin = $('.cointopay_coin_val').val();
+                    selected_coin = $('.cointopaycc_coin_val').val();
                     $.ajax ({
                         url: '<?php echo $this->getCoinsPaymentUrl() ?>',
                         showLoader: true,
@@ -14,20 +14,20 @@
                         success: function(result) {
                             // api response
                             if (result.status == 'error') {
-                                $('.checkout.cointopay-order').closest('.payment-method').find('.cointopay-error').remove();
-                                $('.checkout.cointopay-order').closest('.payment-method').find('.messages').append('<div role="alert" class="message message-error error cointopay-error"><div data-ui-id="checkout-cart-validationmessages-message-error cointopay-error" data-bind="text: $data"> Checkout Error:'+result.message+'</div></div>');
-                                $('.checkout.cointopay-order').hide();
+                                $('.checkout.cointopaycc-order').closest('.payment-method').find('.cointopaycc-error').remove();
+                                $('.checkout.cointopaycc-order').closest('.payment-method').find('.messages').append('<div role="alert" class="message message-error error cointopaycc-error"><div data-ui-id="checkout-cart-validationmessages-message-error cointopaycc-error" data-bind="text: $data"> Checkout Error:'+result.message+'</div></div>');
+                                $('.checkout.cointopaycc-order').hide();
                             } else {
-                                $('.checkout.cointopay-order').closest('.payment-method').find('.cointopay-error').remove();
-                                $('.checkout.cointopay-order').show();
+                                $('.checkout.cointopaycc-order').closest('.payment-method').find('.cointopaycc-error').remove();
+                                $('.checkout.cointopaycc-order').show();
                             }
                         }
                     });
                 });
                 
                 interval = setInterval(function() {
-                    if ($('.cointopay_coin_val').length) {
-                        selected_coin = $('.cointopay_coin_val').val();
+                    if ($('.cointopaycc_coin_val').length) {
+                        selected_coin = $('.cointopaycc_coin_val').val();
                         $.ajax ({
                             url: '<?php echo $this->getCoinsPaymentUrl() ?>',
                             showLoader: true,
@@ -36,12 +36,12 @@
                             success: function(result) {
                                 // api response
                                 if (result.status == 'error') {
-                                    $('.checkout.cointopay-order').closest('.payment-method').find('.cointopay-error').remove();
-                                    $('.checkout.cointopay-order').closest('.payment-method').find('.messages').append('<div role="alert" class="message message-error error cointopay-error"><div data-ui-id="checkout-cart-validationmessages-message-error cointopay-error" data-bind="text: $data"> Checkout Error: '+result.message+'</div></div>');
-                                    $('.checkout.cointopay-order').hide();
+                                    $('.checkout.cointopaycc-order').closest('.payment-method').find('.cointopaycc-error').remove();
+                                    $('.checkout.cointopaycc-order').closest('.payment-method').find('.messages').append('<div role="alert" class="message message-error error cointopaycc-error"><div data-ui-id="checkout-cart-validationmessages-message-error cointopaycc-error" data-bind="text: $data"> Checkout Error: '+result.message+'</div></div>');
+                                    $('.checkout.cointopaycc-order').hide();
                                 } else {
-                                    $('.checkout.cointopay-order').closest('.payment-method').find('.cointopay-error').remove();
-                                    $('.checkout.cointopay-order').show();
+                                    $('.checkout.cointopaycc-order').closest('.payment-method').find('.cointopaycc-error').remove();
+                                    $('.checkout.cointopaycc-order').show();
                                 }
                             }
                         });
@@ -52,7 +52,7 @@
                 // confirm order payment status
                 $(document).on('click', '#confirm_payments', function (event) {
                     event.preventDefault();
-                    transaction_id = $('#cointopay_trid').val();
+                    transaction_id = $('#cointopaycc_trid').val();
                     $.ajax ({
                         url: '<?php echo $this->getCoinsPaymentUrl() ?>',
                         showLoader: true,
@@ -61,10 +61,10 @@
                         success: function(result) {
                             var cointopay_response = JSON.parse(result);
                             if (cointopay_response[1] == 'paid') {
-                                $('#cointo_complete_order').show();
-                                $('#cointo_complete_order')[0].click();
-                                $(".cointopay.popup-overlay, .cointopay.popup-content").removeClass("active");
-                                $(".cointopay-order").hide();
+                                $('#cointocc_complete_order').show();
+                                $('#cointocc_complete_order')[0].click();
+                                $(".cointopaycc.popup-overlay, .cointopaycc.popup-content").removeClass("active");
+                                $(".cointopaycc-order").hide();
                             } else if (cointopay_response[1] == 'waiting') {
                                 alert('Please double check you have successfully transfered payments.');
                             } else if (cointopay_response[1] == 'expired') {

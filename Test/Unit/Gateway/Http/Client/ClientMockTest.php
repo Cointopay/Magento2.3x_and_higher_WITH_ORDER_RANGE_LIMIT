@@ -3,7 +3,7 @@
  * Copyright © 2018 Cointopay. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Magento\CointopayPaymentProvider\Test\Unit\Gateway\Http\Client;
+namespace CointopayCC\PaymentGateway\Test\Unit\Gateway\Http\Client;
 
 use Magento\Payment\Gateway\Http\TransferInterface;
 use Magento\Payment\Model\Method\Logger;

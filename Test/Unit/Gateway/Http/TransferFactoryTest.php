@@ -3,12 +3,12 @@
  * Copyright © 2018 Cointopay. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Magento\CointopayPaymentProvider\Test\Unit\Gateway\Http;
+namespace CointopayCC\PaymentGateway\Test\Unit\Gateway\Http;
 
 use Magento\Payment\Gateway\Http\TransferBuilder;
 use Magento\Payment\Gateway\Http\TransferInterface;
-use Cointopay\PaymentGateway\Gateway\Http\TransferFactory;
-use Cointopay\PaymentGateway\Gateway\Request\MockDataRequest;
+use CointopayCC\PaymentGateway\Gateway\Http\TransferFactory;
+use CointopayCC\PaymentGateway\Gateway\Request\MockDataRequest;
 
 class TransferFactoryTest extends \PHPUnit_Framework_TestCase
 {

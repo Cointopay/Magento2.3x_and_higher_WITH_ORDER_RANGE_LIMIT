@@ -1,5 +1,5 @@
 <?php
-namespace Cointopay\PaymentGateway\Controller\Ctpinfo;
+namespace CointopayCC\PaymentGateway\Controller\Ctpinfo;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;
@@ -17,7 +17,7 @@ class Index extends Action {
     public function execute()
     {
         $this->_view->loadLayout();
-        $this->_view->getPage()->getConfig()->getTitle()->set(__('Cointopay Invoice Detail'));
+        $this->_view->getPage()->getConfig()->getTitle()->set(__('Cointopay CC Invoice Detail'));
         $this->_view->renderLayout();
     }
 }

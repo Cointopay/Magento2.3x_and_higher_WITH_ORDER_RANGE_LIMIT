@@ -3,13 +3,13 @@
  * Copyright © 2018 Cointopay. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Cointopay\PaymentGateway\Test\Unit\Gateway\Request;
+namespace CointopayCC\PaymentGateway\Test\Unit\Gateway\Request;
 
 use Magento\Payment\Gateway\ConfigInterface;
 use Magento\Payment\Gateway\Data\AddressAdapterInterface;
 use Magento\Payment\Gateway\Data\OrderAdapterInterface;
 use Magento\Payment\Gateway\Data\PaymentDataObjectInterface;
-use Cointopay\PaymentGateway\Gateway\Request\AuthorizationRequest;
+use CointopayCC\PaymentGateway\Gateway\Request\AuthorizationRequest;
 
 class AuthorizeRequestTest extends \PHPUnit_Framework_TestCase
 {

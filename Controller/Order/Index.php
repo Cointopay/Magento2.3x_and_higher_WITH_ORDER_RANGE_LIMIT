@@ -4,7 +4,7 @@
 * See COPYING.txt for license details.
 */
 
-namespace Cointopay\Paymentgateway\Controller\Order;
+namespace CointopayCC\Paymentgateway\Controller\Order;
 
 use Magento\Sales\Model\Order\Email\Sender\InvoiceSender;
 
@@ -95,32 +95,32 @@ class Index extends \Magento\Framework\App\Action\Action
     /**
     * Merchant ID
     */
-    const XML_PATH_MERCHANT_ID = 'payment/cointopay_gateway/merchant_gateway_id';
+    const XML_PATH_MERCHANT_ID = 'payment/cointopaycc_gateway/cc_merchant_gateway_id';
 
     /**
     * Merchant COINTOPAY API Key
     */
-    const XML_PATH_MERCHANT_KEY = 'payment/cointopay_gateway/merchant_gateway_key';
+    const XML_PATH_MERCHANT_KEY = 'payment/cointopaycc_gateway/cc_merchant_gateway_key';
 
     /**
     * Merchant COINTOPAY SECURITY Key
     */
-    const XML_PATH_MERCHANT_SECURITY = 'payment/cointopay_gateway/merchant_gateway_security';
+    const XML_PATH_MERCHANT_SECURITY = 'payment/cointopaycc_gateway/cc_merchant_gateway_security';
 	
 	/**
     * Merchant COINTOPAY SECURITY Key
     */
-    const XML_PATH_PAID_NOTENOUGH_ORDER_STATUS = 'payment/cointopay_gateway/order_status_paid_notenough';
+    const XML_PATH_PAID_NOTENOUGH_ORDER_STATUS = 'payment/cointopaycc_gateway/cc_order_status_paid_notenough';
 	
 	/**
     * Merchant COINTOPAY SECURITY Key
     */
-    const XML_PATH_PAID_ORDER_STATUS = 'payment/cointopay_gateway/order_status_paid';
+    const XML_PATH_PAID_ORDER_STATUS = 'payment/cointopaycc_gateway/cc_order_status_paid';
 	
 	/**
     * Merchant FAILED Order Status
     */
-    const XML_PATH_ORDER_STATUS_FAILED = 'payment/cointopay_gateway/order_status_failed';
+    const XML_PATH_ORDER_STATUS_FAILED = 'payment/cointopaycc_gateway/cc_order_status_failed';
 
     /**
     * API URL
@@ -192,8 +192,8 @@ class Index extends \Magento\Framework\App\Action\Action
 						$order->setState($this->paidnotenoughStatus)->setStatus($this->paidnotenoughStatus);
 						$order->save();
 						$result = $this->resultFactory->create(\Magento\Framework\Controller\ResultFactory::TYPE_RAW);
-							$block = $page->getLayout()->createBlock('Cointopay\PaymentGateway\Block\Index')
-							->setTemplate('Cointopay_PaymentGateway::order_response.phtml')
+							$block = $page->getLayout()->createBlock('CointopayCC\PaymentGateway\Block\Index')
+							->setTemplate('CointopayCC_PaymentGateway::order_response.phtml')
 							->setData('message','Not enough was received, please pay the remaining amount or contact support')
 							->toHtml();
 							$result->setContents($block);
@@ -218,8 +218,8 @@ class Index extends \Magento\Framework\App\Action\Action
 						if ($order->getStatus() == 'complete') {
 							/** @var \Magento\Framework\Controller\Result\Json $result */
 							$result = $this->resultFactory->create(\Magento\Framework\Controller\ResultFactory::TYPE_RAW);
-							$block = $page->getLayout()->createBlock('Cointopay\PaymentGateway\Block\Index')
-							->setTemplate('Cointopay_PaymentGateway::order_response.phtml')
+							$block = $page->getLayout()->createBlock('CointopayCC\PaymentGateway\Block\Index')
+							->setTemplate('CointopayCC_PaymentGateway::order_response.phtml')
 							->setData('message','Order cannot be cancel now, because it is completed now.')
 							->toHtml();
 							$result->setContents($block);
@@ -229,8 +229,8 @@ class Index extends \Magento\Framework\App\Action\Action
 							$order->setState($this->failedStatus)->setStatus($this->failedStatus);
 						    $order->save();
 							$result = $this->resultFactory->create(\Magento\Framework\Controller\ResultFactory::TYPE_RAW);
-							$block = $page->getLayout()->createBlock('Cointopay\PaymentGateway\Block\Index')
-							->setTemplate('Cointopay_PaymentGateway::order_response.phtml')
+							$block = $page->getLayout()->createBlock('CointopayCC\PaymentGateway\Block\Index')
+							->setTemplate('CointopayCC_PaymentGateway::order_response.phtml')
 							->setData('message','Order successfully cancelled.')
 							->toHtml();
 							$result->setContents($block);
@@ -242,8 +242,8 @@ class Index extends \Magento\Framework\App\Action\Action
 					} else {
 						/** @var \Magento\Framework\Controller\Result\Json $result */
 						$result = $this->resultFactory->create(\Magento\Framework\Controller\ResultFactory::TYPE_RAW);
-						$block = $page->getLayout()->createBlock('Cointopay\PaymentGateway\Block\Index')
-						->setTemplate('Cointopay_PaymentGateway::order_response.phtml')
+						$block = $page->getLayout()->createBlock('CointopayCC\PaymentGateway\Block\Index')
+						->setTemplate('CointopayCC_PaymentGateway::order_response.phtml')
 						->setData('message','Order status should have valid value.')
 						->toHtml();
 						$result->setContents($block);
@@ -251,8 +251,8 @@ class Index extends \Magento\Framework\App\Action\Action
 					}
 					/** @var \Magento\Framework\Controller\Result\Json $result */
 					$result = $this->resultFactory->create(\Magento\Framework\Controller\ResultFactory::TYPE_RAW);
-					$block = $page->getLayout()->createBlock('Cointopay\PaymentGateway\Block\Index')
-					->setTemplate('Cointopay_PaymentGateway::order_response.phtml')
+					$block = $page->getLayout()->createBlock('CointopayCC\PaymentGateway\Block\Index')
+					->setTemplate('CointopayCC_PaymentGateway::order_response.phtml')
 					->setData('message','Order status successfully updated.')
 					->toHtml();
 					$result->setContents($block);
@@ -260,8 +260,8 @@ class Index extends \Magento\Framework\App\Action\Action
 				} else {
 					/** @var \Magento\Framework\Controller\Result\Json $result */
 					$result = $this->resultFactory->create(\Magento\Framework\Controller\ResultFactory::TYPE_RAW);
-					$block = $page->getLayout()->createBlock('Cointopay\PaymentGateway\Block\Index')
-					->setTemplate('Cointopay_PaymentGateway::order_response.phtml')
+					$block = $page->getLayout()->createBlock('CointopayCC\PaymentGateway\Block\Index')
+					->setTemplate('CointopayCC_PaymentGateway::order_response.phtml')
 					->setData('message','Order status successfully updated.')
 					->toHtml();
 					$result->setContents($block);
@@ -270,8 +270,8 @@ class Index extends \Magento\Framework\App\Action\Action
 			} else {
 				/** @var \Magento\Framework\Controller\Result\Json $result */
 				$result = $this->resultFactory->create(\Magento\Framework\Controller\ResultFactory::TYPE_RAW);
-				$block = $page->getLayout()->createBlock('Cointopay\PaymentGateway\Block\Index')
-				->setTemplate('Cointopay_PaymentGateway::order_response.phtml')
+				$block = $page->getLayout()->createBlock('CointopayCC\PaymentGateway\Block\Index')
+				->setTemplate('CointopayCC_PaymentGateway::order_response.phtml')
 				->setData('message','Order status successfully updated.')
 				->toHtml();
 				$result->setContents($block);
@@ -280,8 +280,8 @@ class Index extends \Magento\Framework\App\Action\Action
         } catch (\Exception $e) {
             /** @var \Magento\Framework\Controller\Result\Json $result */
             $result = $this->resultFactory->create(\Magento\Framework\Controller\ResultFactory::TYPE_RAW);
-			$block = $page->getLayout()->createBlock('Cointopay\PaymentGateway\Block\Index')
-			->setTemplate('Cointopay_PaymentGateway::order_response.phtml')
+			$block = $page->getLayout()->createBlock('CointopayCC\PaymentGateway\Block\Index')
+			->setTemplate('CointopayCC_PaymentGateway::order_response.phtml')
 			->setData('message','General error:'.$e->getMessage())
 			->toHtml();
 			$result->setContents($block);
@@ -289,8 +289,8 @@ class Index extends \Magento\Framework\App\Action\Action
         }
         /** @var \Magento\Framework\Controller\Result\Json $result */
         $result = $this->resultFactory->create(\Magento\Framework\Controller\ResultFactory::TYPE_RAW);
-		$block = $page->getLayout()->createBlock('Cointopay\PaymentGateway\Block\Index')
-		->setTemplate('Cointopay_PaymentGateway::order_response.phtml')
+		$block = $page->getLayout()->createBlock('CointopayCC\PaymentGateway\Block\Index')
+		->setTemplate('CointopayCC_PaymentGateway::order_response.phtml')
 		->setData('message','Something went wrong. Try again later')
 		->toHtml();
 		$result->setContents($block);

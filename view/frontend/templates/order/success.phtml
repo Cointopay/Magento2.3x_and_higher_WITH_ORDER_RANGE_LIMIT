@@ -74,14 +74,14 @@ $order = $block->getOrder();
         <?php  } else { ?>
             <p><?php echo __('Your order # is: <span>%1</span>.',$order->getIncrementId()) ?></p>
         <?php } ?>
-        <?php if ($payment_gateway_code == 'cointopay_gateway') { ?>
+        <?php if ($payment_gateway_code == 'cointopaycc_gateway') { ?>
             <p><?php echo __('Thank you for your order, please complete the payment below.') ?></p>
         <?php } else { ?>
             <p><?php echo __('We\'ll email you an order confirmation with details and tracking info.') ?></p>
         <?php } ?>
         
 	    <!-- Cointopay popup Content -->
-        <?php if ($payment_gateway_code == 'cointopay_gateway') { ?>
+        <?php if ($payment_gateway_code == 'cointopaycc_gateway') { ?>
 	        <?php $cointopay_content = $block->getCointopayHtml(); ?>
 	        <?php //if ($cointopay_content) {  $cointopay_content = $cointopay_content_data->data; 
 			      if ($cointopay_content) {?>
@@ -89,23 +89,12 @@ $order = $block->getOrder();
 		          	<div class="popup-content cointopay active">    
                         <img src="<?php echo $this->getViewFileUrl('Cointopay_PaymentGateway::images/cointopay.gif'); ?>" />
                         <h1> PAYMENT DETAILS </h1>
-			            <img src="<?= $cointopay_content->QRCodeURL ?>" alt="QR Scan Cointopay" />
 			            <div class="cointopay_details">
-				            <p class="remaining_amount"><strong>Amount:</strong><br>
-                                <?=  $cointopay_content->Amount.' ' ?>
-                                <?= strtoupper($cointopay_content->CoinName).' ' ?>
-                                <img src="https://s3-eu-west-1.amazonaws.com/cointopay/img/<?= $cointopay_content->CoinName ?>_dash2.png" style="width:20px;" />
-				            </p>
-                            <p class="address"><strong>Address: </strong> <br> <input type="text" value="<?= $cointopay_content->coinAddress ?>"> </p>
 				            <p class="time"><strong>Expiry: </strong> <br><span id="expire_time"><?= date("m/d/Y h:i:s T",strtotime("+$cointopay_content->ExpiryTime minutes")) ?></span></p>
 				            <p class="trxid"><strong>Transaction ID: </strong> <br><?= $cointopay_content->TransactionID ?></p>
-				            <p class="description">Make sure to send enough to cover  any coin transaction fees!</p>
-				            <p class="description">Send an equal amount or more.</p>
-					    <p class="description">
-						<?php if ($cointopay_content->PaymentDetailCConly != null || $cointopay_content->PaymentDetailCConly != ''){
-							 echo $cointopay_content->PaymentDetailCConly;
-						} else { echo "No Credit Card Details Found. Please enable it."; } ?>
-					    </p>
+							<p class="description"><?php if ($cointopay_content->PaymentDetailCConly != null || $cointopay_content->PaymentDetailCConly != ''){?>
+								 <?=  $cointopay_content->PaymentDetailCConly ?>
+							<?php } else {?><strong>No Credit Card payment details found. Please ask the Merchant to enable it. </strong><?php }?></p>
                              <p class="description"> <a target="_blank" href="<?=  $cointopay_content->RedirectURL ?>">View Invoice details</a></p>
 				            <?php /* <button class="action primary confirm_payments" id="confirm_payments">Confirm Payments</button> */ ?>
 				            <input type="hidden" id="cointopay_trid" value="<?= $cointopay_content->TransactionID ?>" >
@@ -178,5 +167,4 @@ $order = $block->getOrder();
 			<?php } else { echo "No Cointopay data found due to empty session values"; } //} else { echo "No Cointopay Data Found"; } ?>
 	    <?php } ?>
 <?php } ?>
-<a class="action primary" style="float: right;" href="<?= $this->getBaseUrl() ?>">Continue Shopping</a>
 </div>

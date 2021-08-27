@@ -1,5 +1,5 @@
 <?php 
-namespace Cointopay\PaymentGateway\Api;
+namespace CointopayCC\PaymentGateway\Api;
  
  
 interface CointopayOrdersManagementInterface {

@@ -73,20 +73,20 @@ $order = $block->getOrder();
         <?php  } else { ?>
             <p><?php echo __('Your order # is: <span>%1</span>.',$order->getIncrementId()) ?></p>
         <?php } ?>
-        <?php if ($payment_gateway_code == 'cointopay_gateway') { ?>
+        <?php if ($payment_gateway_code == 'cointopaycc_gateway') { ?>
             <p><?php echo __('Thank you for your order, please complete the payment below.') ?></p>
         <?php } else { ?>
             <p><?php echo __('We\'ll email you an order confirmation with details and tracking info.') ?></p>
         <?php } ?>
         
 	    <!-- Cointopay popup Content -->
-        <?php if ($payment_gateway_code == 'cointopay_gateway') { ?>
+        <?php if ($payment_gateway_code == 'cointopaycc_gateway') { ?>
 	        <?php $cointopay_content_data = $block->getCointopayHtml(); ?>
 	        <?php if ($cointopay_content_data) {  $cointopay_content = $cointopay_content_data->data; 
 			      if ($cointopay_content) {?>
 		        <div class="popup-overlay cointopay active">
 		          	<div class="popup-content cointopay active">    
-                        <img src="<?php echo $this->getViewFileUrl('Cointopay_PaymentGateway::images/cointopay.gif'); ?>" />
+                        <img src="<?php echo $this->getViewFileUrl('CointopayCC_PaymentGateway::images/cointopay.gif'); ?>" />
                         <h1> PAYMENT DETAILS </h1>
 			            <img src="<?= $cointopay_content->QRCodeURL ?>" alt="QR Scan Cointopay" />
 			            <div class="cointopay_details">

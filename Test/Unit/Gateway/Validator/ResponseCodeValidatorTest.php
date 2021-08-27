@@ -3,12 +3,12 @@
  * Copyright © 2018 Cointopay. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Cointopay\PaymentGateway\Test\Unit\Gateway\Validator;
+namespace CointopayCC\PaymentGateway\Test\Unit\Gateway\Validator;
 
 use Magento\Payment\Gateway\Validator\ResultInterface;
 use Magento\Payment\Gateway\Validator\ResultInterfaceFactory;
-use Cointopay\PaymentGateway\Gateway\Http\Client\ClientMock;
-use Cointopay\PaymentGateway\Gateway\Validator\ResponseCodeValidator;
+use CointopayCC\PaymentGateway\Gateway\Http\Client\ClientMock;
+use CointopayCC\PaymentGateway\Gateway\Validator\ResponseCodeValidator;
 
 class ResponseCodeValidatorTest extends \PHPUnit_Framework_TestCase
 {

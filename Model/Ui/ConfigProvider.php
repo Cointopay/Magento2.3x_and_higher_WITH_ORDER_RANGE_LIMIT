@@ -3,17 +3,17 @@
  * Copyright © 2018 Cointopay. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Cointopay\PaymentGateway\Model\Ui;
+namespace CointopayCC\PaymentGateway\Model\Ui;
 
 use Magento\Checkout\Model\ConfigProviderInterface;
-use Cointopay\PaymentGateway\Gateway\Http\Client\ClientMock;
+use CointopayCC\PaymentGateway\Gateway\Http\Client\ClientMock;
 
 /**
  * Class ConfigProvider
  */
 class ConfigProvider implements ConfigProviderInterface
 {
-    const CODE = 'cointopay_gateway';
+    const CODE = 'cointopaycc_gateway';
 
     protected $_jsonDecoder;
 
@@ -40,8 +40,8 @@ class ConfigProvider implements ConfigProviderInterface
     /**
     * Merchant ID
     */
-    const XML_PATH_MERCHANT_ID = 'payment/cointopay_gateway/merchant_gateway_id';
-    const XML_PATH_DEFAULT_COIN = 'payment/cointopay_gateway/supported_coins';
+    const XML_PATH_MERCHANT_ID = 'payment/cointopaycc_gateway/cc_merchant_gateway_id';
+    const XML_PATH_DEFAULT_COIN = 'payment/cointopaycc_gateway/cc_supported_coins';
 
     /**
     * @param \Magento\Framework\App\Config\ScopeConfigInterface    $scopeConfig

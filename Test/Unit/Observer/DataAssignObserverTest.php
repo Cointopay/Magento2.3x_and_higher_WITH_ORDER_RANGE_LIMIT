@@ -3,15 +3,15 @@
  * Copyright © 2018 Cointopay. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Cointopay\PaymentGateway\Test\Unit\Observer;
+namespace CointopayCC\PaymentGateway\Test\Unit\Observer;
 
 use Magento\Framework\DataObject;
 use Magento\Framework\Event;
 use Magento\Payment\Model\InfoInterface;
 use Magento\Payment\Model\MethodInterface;
 use Magento\Payment\Observer\AbstractDataAssignObserver;
-use Cointopay\PaymentGateway\Gateway\Http\Client\ClientMock;
-use Cointopay\PaymentGateway\Observer\DataAssignObserver;
+use CointopayCC\PaymentGateway\Gateway\Http\Client\ClientMock;
+use CointopayCC\PaymentGateway\Observer\DataAssignObserver;
 
 class DataAssignObserverTest extends \PHPUnit_Framework_TestCase
 {

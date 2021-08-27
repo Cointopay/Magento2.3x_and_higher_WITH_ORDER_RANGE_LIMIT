@@ -3,13 +3,13 @@
  * Copyright © 2018 Cointopay. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Cointopay\PaymentGateway\Test\Unit\Gateway\Request;
+namespace CointopayCC\PaymentGateway\Test\Unit\Gateway\Request;
 
 use Magento\Payment\Gateway\Data\PaymentDataObjectInterface;
 use Magento\Payment\Model\InfoInterface;
 use Magento\Sales\Model\Order\Payment;
-use Cointopay\PaymentGateway\Gateway\Http\Client\ClientMock;
-use Cointopay\PaymentGateway\Gateway\Request\MockDataRequest;
+use CointopayCC\PaymentGateway\Gateway\Http\Client\ClientMock;
+use CointopayCC\PaymentGateway\Gateway\Request\MockDataRequest;
 
 class MockDataRequestTest extends \PHPUnit_Framework_TestCase
 {

@@ -3,7 +3,7 @@
  * Copyright © 2018 Cointopay. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Cointopay\PaymentGateway\Block;
+namespace CointopayCC\PaymentGateway\Block;
 
 class Cart extends \Magento\Sales\Block\Order\Totals
 {

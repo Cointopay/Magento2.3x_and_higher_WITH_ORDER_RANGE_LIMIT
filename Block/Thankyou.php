@@ -3,7 +3,7 @@
  * Copyright © 2018 Cointopay. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Cointopay\PaymentGateway\Block;
+namespace CointopayCC\PaymentGateway\Block;
 
 class Thankyou extends \Magento\Sales\Block\Order\Totals
 {
@@ -55,12 +55,12 @@ class Thankyou extends \Magento\Sales\Block\Order\Totals
     /**
     * Merchant COINTOPAY API Key
     */
-    const XML_PATH_MERCHANT_KEY = 'payment/cointopay_gateway/merchant_gateway_api_key';
+    const XML_PATH_MERCHANT_KEY = 'payment/cointopaycc_gateway/cc_merchant_gateway_api_key';
 	
 	/**
     * Merchant ID
     */
-    const XML_PATH_MERCHANT_ID = 'payment/cointopay_gateway/merchant_gateway_id';
+    const XML_PATH_MERCHANT_ID = 'payment/cointopaycc_gateway/cc_merchant_gateway_id';
 
     /**
     * @var $response
@@ -152,7 +152,7 @@ class Thankyou extends \Magento\Sales\Block\Order\Totals
      */
     public function getCoinsPaymentUrl()
     {
-        return $this->getUrl("paymentcointopay");
+        return $this->getUrl("paymentcointopaycc");
     }
 	
 	/**

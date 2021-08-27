@@ -3,7 +3,7 @@
  * Copyright © 2018 Cointopay. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Cointopay\PaymentGateway\Gateway\Request;
+namespace CointopayCC\PaymentGateway\Gateway\Request;
 
 use Magento\Payment\Gateway\ConfigInterface;
 use Magento\Payment\Gateway\Request\BuilderInterface;

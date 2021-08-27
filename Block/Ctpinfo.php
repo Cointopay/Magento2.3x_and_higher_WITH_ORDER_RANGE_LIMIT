@@ -1,5 +1,5 @@
 <?php
-namespace Cointopay\PaymentGateway\Block;
+namespace CointopayCC\PaymentGateway\Block;
 
 class CtpInfo extends \Magento\Sales\Block\Order\Totals
 {
@@ -14,7 +14,7 @@ class CtpInfo extends \Magento\Sales\Block\Order\Totals
         return parent::_prepareLayout();
     }*/
 
-protected $checkoutSession;
+    protected $checkoutSession;
     protected $customerSession;
     protected $_orderFactory;
     protected $_coreSession;
@@ -62,12 +62,12 @@ protected $checkoutSession;
     /**
     * Merchant COINTOPAY API Key
     */
-    const XML_PATH_MERCHANT_KEY = 'payment/cointopay_gateway/merchant_gateway_api_key';
+    const XML_PATH_MERCHANT_KEY = 'payment/cointopaycc_gateway/cc_merchant_gateway_api_key';
 	
 	/**
     * Merchant ID
     */
-    const XML_PATH_MERCHANT_ID = 'payment/cointopay_gateway/merchant_gateway_id';
+    const XML_PATH_MERCHANT_ID = 'payment/cointopaycc_gateway/cc_merchant_gateway_id';
 
     /**
     * @var $response
@@ -151,7 +151,7 @@ protected $checkoutSession;
      */
     public function getCoinsPaymentUrl()
     {
-        return $this->getUrl("paymentcointopay");
+        return $this->getUrl("paymentcointopaycc");
     }
 	
 	/**
