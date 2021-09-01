@@ -129,7 +129,7 @@ class CtpInfo extends \Magento\Sales\Block\Order\Totals
 			$storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORE;
 			$orderObj = $this->getOrder();
 			$payment_method_code = $orderObj->getPayment()->getMethodInstance()->getCode();
-			if ($payment_method_code == 'cointopay_gateway') {
+			if ($payment_method_code == 'cointopaycc_gateway') {
 				if(null !== $orderObj->getExtOrderId()){
 				$this->transactionId = $orderObj->getExtOrderId();
 				$this->merchantId = $this->scopeConfig->getValue(self::XML_PATH_MERCHANT_ID, $storeScope);
