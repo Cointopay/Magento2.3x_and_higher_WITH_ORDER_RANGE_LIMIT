@@ -89,7 +89,6 @@ if($order){
 		          	<div class="popup-content cointopay active">    
                         <img src="<?php echo $this->getViewFileUrl('CointopayCC_PaymentGateway::images/cointopay.gif'); ?>" />
                         <h1> PAYMENT DETAILS </h1>
-			            <img src="<?= $cointopay_content->QRCodeURL ?>" alt="QR Scan Cointopay" />
 			            <div class="cointopay_details">
 				            <p class="time"><strong>Expiry: </strong> <br><span id="expire_time"><?= date("m/d/Y h:i:s T",strtotime("+$cointopay_content->ExpiryTime minutes")) ?></span></p>
 				            <p class="trxid"><strong>Transaction ID: </strong> <br><?= $cointopay_content->TransactionID ?></p>
