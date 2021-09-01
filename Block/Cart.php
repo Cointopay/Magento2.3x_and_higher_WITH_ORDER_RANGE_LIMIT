@@ -30,7 +30,7 @@ class Cart extends \Magento\Sales\Block\Order\Totals
 		$this->_redirect = $redirect;
     }
 
-    public function getOrder()
+    public function getOrder($order)
     {
 		$quote=$this->_cart->getQuote();
 		$totalItems=count($quote->getAllItems());
