@@ -94,12 +94,12 @@ class ConfigProvider implements ConfigProviderInterface
 
     private function getSupportedCoins ($defaultCoin)
     {
-        $this->_curlUrl = 'https://cointopay.com/CloneMasterTransaction?MerchantID='.$this->merchantId.'&output=json';
+        /* $this->_curlUrl = 'https://cointopay.com/CloneMasterTransaction?MerchantID='.$this->merchantId.'&output=json';
         $this->_curl->get($this->_curlUrl);
         $response = $this->_curl->getBody();
-        $supportedCoins = $this->_jsonDecoder->decode($response);
-        $coins = [];
-        if (count($supportedCoins) > 0)
+        $supportedCoins = $this->_jsonDecoder->decode($response);*/
+        $coins = ['625' => 'EURO'];
+        /*if (count($supportedCoins) > 0)
         {
             foreach ($supportedCoins as $k => $title)
             {
@@ -108,7 +108,7 @@ class ConfigProvider implements ConfigProviderInterface
                     $coins[$supportedCoins[$k+1]] = $title;
                 }
             } 
-        }
+        }*/
         return $coins;
     }
 }
