@@ -25,7 +25,7 @@
         </arguments>
     </virtualType>
 
-    <!-- Logger, initialized with CointopayPaymentGatewayConfig -->
+    <!-- Logger, initialized with CointopayCCPaymentGatewayConfig -->
     <virtualType name="CointopayCCPaymentGatewayLogger" type="Magento\Payment\Model\Method\Logger">
         <arguments>
             <argument name="config" xsi:type="object">CointopayCCPaymentGatewayConfig</argument>
@@ -70,7 +70,7 @@
     </virtualType>
     <type name="CointopayCC\PaymentGateway\Gateway\Request\AuthorizationRequest">
         <arguments>
-            <argument name="config" xsi:type="object">CointopayPaymentGatewayConfig</argument>
+            <argument name="config" xsi:type="object">CointopayCCPaymentGatewayConfig</argument>
         </arguments>
     </type>
 

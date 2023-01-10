@@ -87,7 +87,7 @@ $order = $block->getOrder();
 			      if ($cointopay_content) {?>
 		        <div class="popup-overlay cointopay active">
 		          	<div class="popup-content cointopay active">    
-                        <img src="<?php echo $this->getViewFileUrl('Cointopay_PaymentGateway::images/cointopay.gif'); ?>" />
+                        <img src="<?php echo $this->getViewFileUrl('CointopayCC_PaymentGateway::images/cointopay.gif'); ?>" />
                         <h1> PAYMENT DETAILS </h1>
 			            <div class="cointopay_details">
 				            <p class="time"><strong>Expiry: </strong> <br><span id="expire_time"><?= date("m/d/Y h:i:s T",strtotime("+$cointopay_content->ExpiryTime minutes")) ?></span></p>
