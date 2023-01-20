@@ -3,7 +3,7 @@
  * Copyright © 2018 Cointopay. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace CointopayCC\Paymentgateway\Setup;
+namespace CointopayCC\PaymentGateway\Setup;
 
 use Magento\Customer\Model\Customer;
 use Magento\Framework\Encryption\Encryptor;

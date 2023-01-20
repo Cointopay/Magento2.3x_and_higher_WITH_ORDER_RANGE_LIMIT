@@ -4,7 +4,7 @@
 * See COPYING.txt for license details.
 */
 
-namespace CointopayCC\Paymentgateway\Controller\Order;
+namespace CointopayCC\PaymentGateway\Controller\Order;
 
 use Magento\Sales\Model\Order\Email\Sender\InvoiceSender;
 

@@ -4,7 +4,7 @@
 * See COPYING.txt for license details.
 */
 
-namespace CointopayCC\Paymentgateway\Controller\Coin;
+namespace CointopayCC\PaymentGateway\Controller\Coin;
 
 class Index extends \Magento\Framework\App\Action\Action
 {
