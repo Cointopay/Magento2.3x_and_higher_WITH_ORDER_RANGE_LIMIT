@@ -89,7 +89,7 @@ class SalesOrderPlaceAfterObserver implements ObserverInterface
 	/**
     * Merchant COINTOPAY ORDER STATUS
     */
-    const XML_PATH_ORDER_STATUS = 'payment/cointopaycc_gateway/cc_order_status';
+    const XML_PATH_ORDER_STATUS = 'payment/cointopaycc_gateway/order_status';
 
     /**
     * API URL
