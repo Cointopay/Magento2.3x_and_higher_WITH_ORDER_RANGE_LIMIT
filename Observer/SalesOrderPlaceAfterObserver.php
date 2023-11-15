@@ -123,6 +123,9 @@ class SalesOrderPlaceAfterObserver implements ObserverInterface
     **/
     protected $orderStatus;
 
+    protected $_response;
+    protected $_urlRewrite;
+
 
     public function __construct (
         \Psr\Log\LoggerInterface $logger,
