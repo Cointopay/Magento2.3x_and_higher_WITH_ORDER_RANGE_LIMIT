@@ -125,6 +125,8 @@ class SalesOrderPlaceAfterObserver implements ObserverInterface
 
     protected $_response;
     protected $_urlRewrite;
+    protected $_urlRewriteFactory;
+    protected $urlFinder;
 
 
     public function __construct (
